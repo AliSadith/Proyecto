@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+pyhton-dotenv
+psycopg
+python-jose[criptography]
+bcrypt
