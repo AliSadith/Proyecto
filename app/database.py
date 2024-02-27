@@ -1,21 +1,23 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchem.ext.declarative import declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 load_dotenv()
 
-user = os.getenv("POSTGRESS_USER")
-password = os.getenv("POSTGRESS_PASSSWORD")
-database = os.getenv("POSTGRESS_DB")
-host = os.getenv("POSTGRESS_HOST")
-port = os.getenv("POSTGRESS_PORT")
+user = "postgress"
+password = "testing"
+database = "my_basedatos"
+host = "localhost"
+port = "5432"
+
+print(port,host)
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{user}:{password}@{host}:{port}/{database}"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
 
-sessionlocal = sessionmarker(autocommit=False, autoflush=False, bind=engine)
+sessionlocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 

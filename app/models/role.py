@@ -1,12 +1,12 @@
 from sqlalchemy import Boolean, Column, Integer, String
 from app.database import Base
-from sqlalchmey.orm import relationship
+from sqlalchemy.orm import relationship
 
 
 
 class Role(Base):
     __tablename__ = "role"
-    id=Column(integer, primary_key=True, idex=True)
-    nombre = Column(String(200), idex=True)
+    id=Column(Integer, primary_key=True, index=True)
+    nombre = Column(String(200), index=True)
 
     
